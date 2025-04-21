@@ -1,0 +1,197 @@
+:root {
+    --primary-dark: #0A1929;
+    --secondary-color: #4DABF7;
+    --accent-color: #82E9DE;
+    --text-color: #E3F2FD;
+}
+
+body {
+    background-color: var(--primary-dark);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--primary-dark), #1A365D);
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+.login-form, .connect-box, .success-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    width: 320px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+input {
+    display: block;
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: rgba(227, 242, 253, 0.5);
+}
+
+input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+button, .instagram-button, .home-button {
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    color: var(--primary-dark);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+button:hover, .instagram-button:hover, .home-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Instagram-specific styles - separate to maintain authentic look */
+.instagram-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #fafafa;
+    padding: 20px;
+}
+
+.instagram-box {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    padding: 40px;
+    width: 350px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.instagram-logo {
+    width: 175px;
+    margin-bottom: 15px;  /* Reduced from 30px to accommodate new text */
+}
+
+.login-text {
+    color: #262626;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.instagram-box input {
+    width: 100%;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    padding: 9px 8px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #262626;
+}
+
+.instagram-login-button {
+    width: 100%;
+    background: #0095f6;
+    color: #fff;
+    padding: 7px 16px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #00376b;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 12px;
+    display: block;
+}
+
+.instagram-signup-box {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.instagram-signup-box p {
+    margin: 0;
+    font-size: 14px;
+    color: #262626;
+}
+
+.signup-link {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.get-app {
+    text-align: center;
+}
+
+.get-app p {
+    font-size: 14px;
+    color: #262626;
+    margin-bottom: 20px;
+}
+
+.app-download {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.app-download img {
+    height: 40px;
+}

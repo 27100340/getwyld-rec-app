@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connect Instagram - GetWyld</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Connect Instagram</h1>
+        <div class="connect-box">
+            <p>Ready to link your Instagram account?</p>
+            <a href="{{ url_for('instagram_login') }}" class="instagram-button">
+                Connect to Instagram
+            </a>
+        </div>
+    </div>
+</body>
+</html>
