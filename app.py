@@ -21,5 +21,5 @@ def instagram_login():
 def success():
     return render_template('success.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# Remove the if __name__ == '__main__' block for Vercel deployment
+app = app
