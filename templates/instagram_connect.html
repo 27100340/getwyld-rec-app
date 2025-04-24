@@ -1,19 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Connect Instagram - GetWyld</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Connect Instagram - GetWyld</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* reset & center */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body {
+      width:100%; height:100%;
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Poppins',sans-serif; position:relative; overflow:hidden;
+    }
+
+    /* animated purple–pink background */
+    body::before {
+      content:''; position:absolute; top:0; left:0; width:100%; height:100%;
+      background: linear-gradient(45deg, #A843D4, #FF3CAC, #784BA0, #C86DD7);
+      background-size:400% 400%; animation: bgAnim 9s ease infinite; z-index:-3;
+    }
+    @keyframes bgAnim {
+      0%   { background-position:0% 50%; }
+      50%  { background-position:100% 50%; }
+      100% { background-position:0% 50%; }
+    }
+
+    /* blurred pink/purple blobs */
+    .shape { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.3; }
+    .shape.a { width:500px; height:500px; background:radial-gradient(circle at top left, #FF3CAC, transparent); top:-150px; left:-150px; animation:float1 8s ease-in-out infinite; }
+    .shape.b { width:400px; height:400px; background:radial-gradient(circle at bottom right, #784BA0, transparent); bottom:-100px; right:-100px; animation:float2 8s ease-in-out infinite 2s; }
+    @keyframes float1 { 0%,100%{transform:translate(0,0);}50%{transform:translate(30px,-40px);} }
+    @keyframes float2 { 0%,100%{transform:translate(0,0);}50%{transform:translate(-30px,40px);} }
+
+    /* dark purple card */
+    .container {
+      position:relative; z-index:1;
+      background: #1D063B;
+      border-radius:20px; padding:40px 30px; width:360px;
+      text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+    .container h1 {
+      font-size:2.5rem; font-weight:700;
+      background: linear-gradient(90deg, #FF3CAC, #784BA0);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom:20px;
+    }
+    .container p {
+      color: #FFFFFF; margin-bottom:30px; font-size:1rem;
+    }
+    .instagram-button {
+      display:inline-block; padding:12px 24px;
+      font-size:1rem; font-weight:600; color:#fff; text-decoration:none;
+      background: linear-gradient(90deg, #FF3CAC, #784BA0);
+      border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.2);
+      transition: transform .2s;
+    }
+    .instagram-button:hover { transform: translateY(-2px); }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Connect Instagram</h1>
-        <div class="connect-box">
-            <p>Ready to link your Instagram account?</p>
-            <a href="{{ url_for('instagram_login') }}" class="instagram-button">
-                Connect to Instagram
-            </a>
-        </div>
-    </div>
+
+  <div class="shape a"></div>
+  <div class="shape b"></div>
+
+  <div class="container">
+    <h1>Connect Instagram</h1>
+    <p>Ready to link your Instagram account?</p>
+    <a href="{{ url_for('instagram_login') }}" class="instagram-button">
+      Connect to Instagram
+    </a>
+  </div>
+
 </body>
 </html>
