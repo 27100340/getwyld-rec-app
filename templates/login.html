@@ -1,21 +1,128 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>GetWyld</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>GetWyld</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      position: relative;
+    }
+
+    /* animated full-screen gradient */
+    body::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(45deg, #A843D4, #FF3CAC, #784BA0, #C86DD7);
+      background-size: 400% 400%;
+      animation: gradientBG 9s ease infinite;
+      z-index: -3;
+    }
+    @keyframes gradientBG {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* floating blurred blobs (or swap for your vectors) */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.4;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+    .shape.one {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle at top left, #FF3CAC, transparent);
+      top: -200px; left: -200px;
+      animation-name: float1;
+    }
+    .shape.two {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle at bottom right, #784BA0, transparent);
+      bottom: -150px; right: -150px;
+      animation-name: float2;
+    }
+    @keyframes float1 {
+      0%,100% { transform: translate(0,0); }
+      50%     { transform: translate(50px, 80px); }
+    }
+    @keyframes float2 {
+      0%,100% { transform: translate(0,0); }
+      50%     { transform: translate(-60px, -40px); }
+    }
+
+    /* the card */
+    .container {
+      position: relative;
+      z-index: 1;
+      background-color: #1D063B;
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 350px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .container h1 {
+      color: #FF3CAC;
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .container h2 {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+    .container input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: none;
+      font-size: 14px;
+    }
+    .container button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #FF3CAC 0%, #784BA0 100%);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>GetWyld</h1>
-        <div class="login-form">
-            <h2>Welcome Back</h2>
-            <form action="{{ url_for('connect') }}" method="post">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit">Continue</button>
-            </form>
-        </div>
-    </div>
+
+  <!-- Replace these with your own SVG/vector files if you like -->
+  <div class="shape one"></div>
+  <div class="shape two"></div>
+
+  <div class="container">
+    <h1>NetWorth</h1>
+    <h2>Welcome Back</h2>
+    <form action="{{ url_for('connect') }}" method="post">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+
 </body>
 </html>

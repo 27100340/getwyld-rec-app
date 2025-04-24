@@ -1,17 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Success - GetWyld</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Success – GetWyld</title>
+  <style>
+    /* Base reset & font */
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #fff;
+    }
+    /* Container */
+    .container {
+      text-align:center;
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+      padding: 60px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      max-width: 360px;
+      width: 100%;
+    }
+    /* Heading */
+    .container h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    /* Success box */
+    .success-box {
+      background: rgba(0,0,0,0.4);
+      border-radius: 8px;
+      padding: 24px 16px;
+      margin-bottom: 24px;
+    }
+    .success-box p {
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    /* Button */
+    .home-button {
+      display: inline-block;
+      text-decoration: none;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .home-button:hover {
+      background: rgba(255,255,255,0.25);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Success!</h1>
-        <div class="success-box">
-            <p>✨ Instagram successfully connected!</p>
-            <a href="/" class="home-button">Return to Dashboard</a>
-        </div>
+  <div class="container">
+    <h1>Success!</h1>
+    <div class="success-box">
+      <p>✨ Instagram successfully connected!</p>
+      <a href="/" class="home-button">Return to Dashboard</a>
     </div>
+  </div>
 </body>
 </html>
